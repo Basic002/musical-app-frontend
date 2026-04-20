@@ -1,0 +1,32 @@
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home';
+
+// Nos fausses pages en attendant de les créer
+const Login = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-violet font-title font-bold">Connexion</h1></div>;
+const Register = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-violet font-title font-bold">Inscription</h1></div>;
+const Favorites = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-cyan font-title font-bold">Mes Favoris</h1></div>;
+const Profile = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Mon Profil</h1></div>;
+const AdminDashboard = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Dashboard Admin</h1></div>;
+const AdminEventForm = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Créer un événement</h1></div>;
+const NotFound = () => <div className="p-10 text-center"><h1 className="text-4xl text-red-500 font-title font-bold">Erreur 404 - Page introuvable</h1></div>;
+
+function App() {
+  return (
+    <BrowserRouter>
+      <main className="min-h-screen bg-night-bg text-white">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/favorites" element={<Favorites />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/admin/event" element={<AdminEventForm />} />
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </main>
+    </BrowserRouter>
+  )
+}
+
+export default App;

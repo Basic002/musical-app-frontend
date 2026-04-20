@@ -1,0 +1,20 @@
+/* On importe le moteur de Tailwind V4 */
+@import "tailwindcss";
+
+/* On injecte ta charte graphique Night Vibes directement ici */
+@theme {
+  --color-night-bg: #0F172A;
+  --color-night-card: #1E293B;
+  --color-neon-violet: #8B5CF6;
+  --color-neon-cyan: #22D3EE;
+  --color-night-text: #94A3B8;
+  
+  --font-title: "Poppins", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Le style par défaut de ton corps de page */
+body {
+  background-color: var(--color-night-bg);
+  color: white;
+}
