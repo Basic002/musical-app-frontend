@@ -74,6 +74,13 @@ const Login = () => {
             Se connecter
           </button>
         </form>
+        {/* Lien de redirection */}
+        <div className="mt-6 text-center text-night-text text-sm">
+          Pas encore de compte ?{' '}
+          <Link to="/register" className="text-neon-cyan hover:underline font-medium">
+            S'inscrire
+          </Link>
+        </div>
       </div>
     </div>
   );
