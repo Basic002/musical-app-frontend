@@ -53,6 +53,29 @@ const Register = () => {
               className="w-full bg-night-bg border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-violet transition-colors placeholder-slate-600"
             />
           </div>
+
+          {/* Champ Email */}
+          <div>
+            <label className="block text-sm font-medium text-night-text mb-1">
+              Adresse Email*
+            </label>
+            <input
+              type="email"
+              placeholder="exemple@musique.com"
+              className="w-full bg-night-bg border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-violet transition-colors placeholder-slate-600"
+            />
+          </div>
+          {/* Champ Mot de passe */}
+            <div>
+                <label className="block text-sm front-medium text-night-text mb-1">
+                    Mot de passe*
+                </label>
+                <input
+                    type="password"
+                    placeholder="••••••••"
+                    className="w-full bg-night-bg border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-violet transition-colors placeholder-slate-600"
+                />
+            </div>
         </form>
       </div>
     </div>
