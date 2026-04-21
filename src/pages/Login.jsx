@@ -24,9 +24,9 @@ const Login = () => {
       </Link>
 
       {/* Carte du formulaire */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         {/* Le logo Discover */}
-        <div className="text-4xl font-title font-bold mb-6 tracking-wide">
+        <div className="text-4xl font-title font-bold tracking-wide">
           <span className="text-neon-violet">Disc</span>
           <span className="text-white">over</span>
         </div>

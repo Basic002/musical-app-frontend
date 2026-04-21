@@ -24,9 +24,9 @@ const Register = () => {
       </Link>
 
       {/* Carte du formulaire */}
-      <div className="text-center mb-8">
+      <div className="text-center mb-4">
         {/* Le logo Discover */}
-        <div className="text-4xl font-title font-bold mb-6 tracking-wide">
+        <div className="text-4xl font-title font-bold tracking-wide">
           <span className="text-neon-violet">Disc</span>
           <span className="text-white">over</span>
         </div>
@@ -86,11 +86,8 @@ const Register = () => {
         </form>
         {/* Lien de redirection */}
         <div className="mt-6 text-center text-night-text text-sm">
-          Déjà un compte ?{" "}
-          <Link
-            to="/login"
-            className="text-neon-cyan hover:underline font-medium"
-          >
+          Déjà un compte ?{' '}
+          <Link to="/login" className="text-neon-cyan hover:underline font-medium">
             Se connecter
           </Link>
         </div>
