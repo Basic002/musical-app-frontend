@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
+import Login from './pages/Login';
 
 // Nos fausses pages en attendant de les créer
-const Login = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-violet font-title font-bold">Connexion</h1></div>;
 const Register = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-violet font-title font-bold">Inscription</h1></div>;
 const Favorites = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-cyan font-title font-bold">Mes Favoris</h1></div>;
 const Profile = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Mon Profil</h1></div>;
