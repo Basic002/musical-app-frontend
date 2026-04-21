@@ -24,6 +24,14 @@ const Login = () => {
       </Link>
 
       {/* Carte du formulaire */}
+      <div className="text-center mb-8">
+        {/* Le nouveau logo Discover */}
+        <div className="text-4xl font-title font-bold mb-6 tracking-wide">
+          <span className="text-neon-violet">Disc</span>
+          <span className="text-white">over</span>
+        </div>
+      </div>
+
       <div className="w-full max-w-md bg-night-card rounded-2xl shadow-2xl p-8 border border-slate-800">
         <div className="text-center mb-8">
           <h1 className="text-3xl font-title font-bold text-white mb-2">
@@ -34,7 +42,19 @@ const Login = () => {
           </p>
         </div>
 
-        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}></form>
+        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          {/* Champ Email */}
+          <div>
+            <label className="block text-sm font-medium text-night-text mb-1">
+              Adresse email*
+            </label>
+            <input
+              type="email"
+              placeholder="exemp@musique.com"
+              className="w-full bg-night-bg border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-violet transition-colors placeholder-slate-600"
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
