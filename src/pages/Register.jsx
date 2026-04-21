@@ -41,7 +41,19 @@ const Register = () => {
           </p>
         </div>
 
-        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}></form>
+        <form className="space-y-5" onSubmit={(e) => e.preventDefault()}>
+          {/* Champ Nom d'utilisateur */}
+          <div>
+            <label className="block text-sm font-medium text-night-text mb-1">
+              Nom d'utilisateur*
+            </label>
+            <input
+              type="text"
+              placeholder="Nom d'utilisateur"
+              className="w-full bg-night-bg border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-neon-violet transition-colors placeholder-slate-600"
+            />
+          </div>
+        </form>
       </div>
     </div>
   );
