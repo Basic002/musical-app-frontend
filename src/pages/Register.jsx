@@ -84,14 +84,16 @@ const Register = () => {
             S'inscrire
           </button>
         </form>
-
-        {/* Bouton de validation */}
-        <button
-          type="submit"
-          className="w-full bg-neon-violet hover:bg-purple-500 text-white font-title font-bold py-3 rounded-lg mt-6 transition-all shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_20px_rgba(139,92,246,0.5)]"
-        >
-          S'inscrire
-        </button>
+        {/* Lien de redirection */}
+        <div className="mt-6 text-center text-night-text text-sm">
+          Déjà un compte ?{" "}
+          <Link
+            to="/login"
+            className="text-neon-cyan hover:underline font-medium"
+          >
+            Se connecter
+          </Link>
+        </div>
       </div>
     </div>
   );
