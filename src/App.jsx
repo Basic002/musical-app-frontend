@@ -3,9 +3,9 @@ import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Profile from './pages/Profile';
+import Favorites from './pages/Favorites';
 
-// Nos fausses pages en attendant de les créer
-const Favorites = () => <div className="p-10 text-center"><h1 className="text-4xl text-neon-cyan font-title font-bold">Mes Favoris</h1></div>;
+// Les fausses pages en attendant de les créer
 const AdminDashboard = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Dashboard Admin</h1></div>;
 const AdminEventForm = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Créer un événement</h1></div>;
 const NotFound = () => <div className="p-10 text-center"><h1 className="text-4xl text-red-500 font-title font-bold">Erreur 404 - Page introuvable</h1></div>;
