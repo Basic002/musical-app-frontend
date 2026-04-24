@@ -55,7 +55,7 @@ const AdminEventForm = () => {
         <div className="flex items-center gap-4">
           <Link
             to="/"
-            className="text-2xl font-title font-bold tracking-wide hover:opacity-80 transition-opacity"
+            className="text-3xl font-title font-bold tracking-wide hover:opacity-80 transition-opacity"
           >
             <span className="text-neon-violet">Disc</span>
             <span className="text-white">over</span>
