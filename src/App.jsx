@@ -5,11 +5,10 @@ import Register from './pages/Register';
 import Profile from './pages/Profile';
 import Favorites from './pages/Favorites';
 import AdminDashboard from './pages/AdminDashboard';
+import AdminEventForm from './pages/AdminEventForm';
+import NotFound from './pages/NotFound';
 
 // Les fausses pages en attendant de les créer
-const AdminEventForm = () => <div className="p-10 text-center"><h1 className="text-4xl text-white font-title font-bold">Créer un événement</h1></div>;
-const NotFound = () => <div className="p-10 text-center"><h1 className="text-4xl text-red-500 font-title font-bold">Erreur 404 - Page introuvable</h1></div>;
-
 function App() {
   return (
     <BrowserRouter>
