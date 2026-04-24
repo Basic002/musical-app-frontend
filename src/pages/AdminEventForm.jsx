@@ -2,11 +2,9 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 
 const AdminEventForm = () => {
-  // --- ÉTATS POUR L'IMAGE (PREVIEW ET FICHIER) ---
+  // ÉTATS POUR L'IMAGE (PREVIEW ET FICHIER)
   const [imagePreview, setImagePreview] = useState(null); // Pour afficher l'aperçu
   const [isDragging, setIsDragging] = useState(false); // Pour le style visuel au survol
-
-  // --- GESTIONNAIRES D'ÉVÉNEMENTS (DRAG & DROP) ---
 
   // 1. Quand le fichier entre dans la zone de dépôt
   const handleDragOver = (e) => {
@@ -104,7 +102,6 @@ const AdminEventForm = () => {
           <form className="space-y-6" onSubmit={(e) => e.preventDefault()}>
             {/* GRILLE 2 COLONNES */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {/* === NOUVEAU CHAMP : PHOTO GLISSER-DÉPOSER === */}
               <div className="md:col-span-2">
                 <label className="block text-sm font-medium text-night-text mb-1.5">
                   Affiche du concert *
@@ -117,8 +114,8 @@ const AdminEventForm = () => {
                   onDrop={handleDrop}
                   className={`relative w-full h-48 rounded-2xl border-2 border-dashed transition-all flex flex-col items-center justify-center p-2 text-center group cursor-pointer overflow-hidden ${
                     isDragging
-                      ? "border-neon-cyan bg-neon-cyan/10 shadow-[0_0_20px_rgba(34,211,238,0.2)]" // Style au survol
-                      : "border-slate-700 bg-night-bg hover:border-slate-500" // Style normal
+                      ? "border-neon-cyan bg-neon-cyan/10 shadow-[0_0_20px_rgba(34,211,238,0.2)]"
+                      : "border-slate-700 bg-night-bg hover:border-slate-500"
                   }`}
                 >
                   {/* Champ caché input classique (au cas où on clique) */}
@@ -185,8 +182,6 @@ const AdminEventForm = () => {
                   )}
                 </div>
               </div>
-
-              {/* === FIN DU NOUVEAU CHAMP === */}
 
               {/* Nom de l'artiste / Événement */}
               <div className="md:col-span-2">
