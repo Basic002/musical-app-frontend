@@ -2,8 +2,7 @@ import { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import api from "../api";
 
-const Login = () => {
-  // On crée des "états" pour stocker ce que l'utilisateur tape
+const Login = ({ setUser }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState("");
@@ -15,15 +14,14 @@ const Login = () => {
     setError("");
 
     try {
-      // On envoie la requête POST à notre Back-end
       const response = await api.post("/auth/login", { email, password });
 
       if (response.data.success) {
-        // Si c'est bon, le cookie est enregistré tout seul, on redirige vers le profil !
+        setUser(response.data.user);
+        
         navigate("/profile");
       }
     } catch (err) {
-      // Si le serveur renvoie une erreur (mauvais mdp, etc.)
       setError(err.response?.data?.message || "Erreur de connexion");
     }
   };
@@ -54,14 +52,12 @@ const Login = () => {
           </p>
         </div>
 
-        {/* Affichage de l'erreur si elle existe */}
         {error && (
           <div className="mb-4 p-3 bg-red-500/20 border border-red-500/50 text-red-400 rounded-lg text-sm text-center">
             {error}
           </div>
         )}
 
-        {/* On lie le formulaire à notre fonction handleLogin */}
         <form className="space-y-5" onSubmit={handleLogin}>
           <div>
             <label className="block text-sm font-medium text-night-text mb-1">

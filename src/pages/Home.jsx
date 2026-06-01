@@ -1,11 +1,29 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 
-const Home = () => {
+const Home = ({ user, setUser }) => {
+  const navigate = useNavigate();
+
+  // Fonction pour gérer la déconnexion avec confirmation
+  const handleLogout = async () => {
+    const isConfirmed = window.confirm("Êtes-vous sûr de vouloir vous déconnecter ?");
+    if (isConfirmed) {
+      try {
+        await axios.post('http://localhost:5000/api/auth/logout', {}, {
+          withCredentials: true 
+        });
+        setUser(null);
+        navigate('/');
+      } catch (error) {
+        console.error("Erreur lors de la déconnexion :", error);
+      }
+    }
+  };
+
   return (
     <div className="h-screen w-full flex flex-col bg-night-bg font-body text-white overflow-hidden">
       {/* HEADER / NAVBAR RESPONSIVE */}
       <header className="border-b border-night-card bg-night-bg relative z-20">
-        {/* Ligne principale : Logo + Recherche (PC) + Boutons */}
         <div className="h-20 flex items-center justify-between px-4 sm:px-6">
           {/* Logo à gauche */}
           <div className="flex items-center flex-shrink-0">
@@ -45,22 +63,45 @@ const Home = () => {
             </div>
           </div>
 
+          {/* RENDU CONDITIONNEL DES BOUTONS */}
           <div className="flex items-center gap-2 sm:gap-4 flex-shrink-0">
-            <Link
-              to="/login"
-              className="text-night-text hover:text-white text-sm sm:text-base font-medium transition-colors whitespace-nowrap"
-            >
-              Connexion
-            </Link>
-            <Link
-              to="/register"
-              className="bg-neon-violet hover:bg-purple-500 text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium transition-all shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] whitespace-nowrap"
-            >
-              S'inscrire
-            </Link>
+            {user ? (
+              /* --- SI CONNECTÉ --- */
+              <>
+                <Link
+                  to="/profile"
+                  className="text-night-text hover:text-white text-sm sm:text-base font-medium transition-colors whitespace-nowrap"
+                >
+                  Mon Profil
+                </Link>
+                <button
+                  onClick={handleLogout}
+                  className="bg-red-500/10 hover:bg-red-500 border border-red-500 text-red-500 hover:text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium transition-all whitespace-nowrap"
+                >
+                  Se déconnecter
+                </button>
+              </>
+            ) : (
+              /* --- SI NON CONNECTÉ --- */
+              <>
+                <Link
+                  to="/login"
+                  className="text-night-text hover:text-white text-sm sm:text-base font-medium transition-colors whitespace-nowrap"
+                >
+                  Connexion
+                </Link>
+                <Link
+                  to="/register"
+                  className="bg-neon-violet hover:bg-purple-500 text-white px-3 sm:px-6 py-1.5 sm:py-2 rounded-full text-sm sm:text-base font-medium transition-all shadow-[0_0_15px_rgba(139,92,246,0.3)] hover:shadow-[0_0_20px_rgba(139,92,246,0.5)] whitespace-nowrap"
+                >
+                  S'inscrire
+                </Link>
+              </>
+            )}
           </div>
         </div>
 
+        {/* Barre de recherche Mobile */}
         <div className="md:hidden px-4 pb-4">
           <div className="relative w-full">
             <input
